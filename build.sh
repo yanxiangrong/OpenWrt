@@ -55,10 +55,11 @@ $GITHUB_WORKSPACE/$DIY_SCRIPT
 $GITHUB_WORKSPACE/scripts/preset-clash-core.sh $CLASH_KERNEL
 $GITHUB_WORKSPACE/scripts/preset-terminal-tools.sh
 $GITHUB_WORKSPACE/scripts/preset-adguard-core.sh $CLASH_KERNEL
-make defconfig
-make download -j8
 
 mkdir -p files/etc/uci-defaults
 cp $GITHUB_WORKSPACE/scripts/init-settings.sh files/etc/uci-defaults/99-init-settings
 
-make -j8
+make defconfig
+make download -j8
+
+make -j16
